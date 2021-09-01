@@ -1,32 +1,11 @@
-# ACM Research Coding Challenge (Fall 2021)
+## Small Scale Implementation (just for this piece of text)
+I made a program that only analyzes the words in the input file provided. I created a list of all the words in the file and a corresponding "key" list with their associated scores. The magnitude of score for each word went from 0 to 3 (neutral, slight, moderate, and high) and there were negative and positive versions (for positive and negative emotions). For certain adverbs like the word "very," I added a special rule since it can change a sentence's score depending on whether it is in front of a positive or negative word. I made a case for exclamation points as well since they increase the magnitude of whatever sentence they belong to. The program goes through all the words (and special rules) and adds the scores together for each sentence and adds the sentence scores to get a score for the overall text. It prints out the scores for each sentence and the whole text as well. It also calculates a sentiment percentage (-100% with all heavily negative words to 100% with all strongly positive words) from dividing the score by the max magnitude (words multiplied by 3) so that it can be compared to other pieces of text that may have different sizes. The percent was about 2.6%, which makes sense since the first paragraph was somewhat negative while the second was more positive.
 
-## [](https://github.com/ACM-Research/Coding-Challenge-F21#no-collaboration-policy)No Collaboration Policy
+* In my program (written in C++), I ran it using a local file directory for the input file, so if you want to run my code, you would have to change the file address. I used a class I had made last year to make file interaction easier and more intuitive. It is also attached.
 
-**You may not collaborate with anyone on this challenge.**  You  _are_  allowed to use Internet documentation. If you  _do_  use existing code (either from Github, Stack Overflow, or other sources),  **please cite your sources in the README**.
+## Large Scale Implementation
+If the project was designed to attempt to analyze any piece of text (with a time and resource budget of a much larger scale), I would propose a different approach. First, you could gather data from thousands of sentences and what scores humans would give them. Then, repeat the process with paragraphs. This information could then be fed into a program that would find patterns between words, sentences, and paragraphs. For example, if the database contained two sentences that were the exact same besides one saying "okay" and the other saying "good," then the computer could see that the one word difference changed the score by a point. I don't really know how to code in pattern recognition without manually telling the computer to look for a specific pattern, but I would say that a proper solution would include this feature so that the computer can figure out certain things like sarcasm, words in all caps, or the patterns mentioned I mentioned in the small-scall section. Another example would be looking for a thesis or a conclusion paragraph because those might weigh more heavily. 
 
-## [](https://github.com/ACM-Research/Coding-Challenge-F21#submission-procedure)Submission Procedure
+In general, computers have a hard time understanding context because it isn't straightforward. When you add enough things together, the final product is no longer only the sum of its parts. Machine learning helps computers to get a grasp on how on this concept, much like how we humans have to spend many years in school learning various writing phenomena in order to communicate and understand language effectively.
 
-Please follow the below instructions on how to submit your answers.
-
-1.  Create a  **public**  fork of this repo and name it  `ACM-Research-Coding-Challenge-F21`. To fork this repo, click the button on the top right and click the "Fork" button.
-
-2.  Clone the fork of the repo to your computer using  `git clone [the URL of your clone]`. You may need to install Git for this (Google it).
-
-3.  Complete the Challenge based on the instructions below.
-
-4.  Submit your solution by filling out this [form](https://acmutd.typeform.com/to/zF1IcBGR).
-
-## Assessment Criteria 
-
-Submissions will be evaluated holistically and based on a combination of effort, validity of approach, analysis, adherence to the prompt, use of outside resources (encouraged), promptness of your submission, and other factors. Your approach and explanation (detailed below) is the most weighted criteria, and partial solutions are accepted. 
-
-## [](https://github.com/ACM-Research/Coding-Challenge-S21#question-one)Question One
-
-[Sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) is a natural language processing technique that computes a sentiment score for a body of text. This sentiment score can quantify how positive, negative, or neutral the text is. The following dataset in  `input.txt`  contains a relatively large body of text.
-
-**Determine an overall sentiment score of the text in this file, explain what this score means, and contrast this score with what you expected.**  If your solution also provides different metrics about the text (magnitude, individual sentence score, etc.), feel free to add it to your explanation.   
-
-**You may use any programming language you feel most comfortable. We recommend Python because it is the easiest to implement. You're allowed to use any library/API you want to implement this**, just document which ones you used in this README file. Try to complete this as soon as possible as submissions are evaluated on a rolling basis.
-
-Regardless if you can or cannot answer the question, provide a short explanation of how you got your solution or how you think it can be solved in your README.md file. However, we highly recommend giving the challenge a try, you just might learn something new!
-
+* Also, since sentiment is entirely subjective, any program created to analyze it could not be perfect because there is no "correct" answer by definition. The goal would be to formulate scores that can be easily agreed upon - an "excellent" formula rather than a "perfect" formula, since perfection here would be impossible by definition as I said.
